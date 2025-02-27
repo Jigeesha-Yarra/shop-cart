@@ -8,7 +8,13 @@ const Home = ({ searchQuery }) => {
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
-      .then((data) => setProducts(data));
+      .then((data) => {
+        console.log("Products fetched:", data); // Log the fetched data
+        setProducts(data); // Update state with fetched data
+      })
+      .catch((error) => {
+        console.error("Error fetching products:", error);
+      });
   }, []);
 
   const filteredProducts = products.filter((product) =>
