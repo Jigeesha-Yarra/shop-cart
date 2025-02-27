@@ -9,11 +9,10 @@
   <body>
     <div id="root"></div>
     <script>
-      // Handle redirection after page loads
       if (sessionStorage.redirect) {
         const redirect = sessionStorage.redirect;
         delete sessionStorage.redirect;
-        window.location.href = redirect;
+        window.location.href = '/shop-cart' + redirect; 
       }
     </script>
   </body>
