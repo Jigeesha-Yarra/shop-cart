@@ -1,12 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useCart } from "../context/CartContext"; // Imported useCart
+import { useCart } from "../context/CartContext";
 import "./Header.css";
 
 const Header = ({ searchQuery, setSearchQuery }) => {
-  const { state } = useCart(); // Access cart state
-
-  // Calculate total number of items in the cart
+  const { state } = useCart();
   const totalItems = state.cart.reduce((total, item) => total + item.qty, 0);
 
   const handleSearchChange = (e) => {
@@ -16,7 +14,7 @@ const Header = ({ searchQuery, setSearchQuery }) => {
   return (
     <header>
       <nav className="container">
-        <Link to="/" className="logo">
+        <Link to="/" className="logo"> {/* Link to home page */}
           Shop Cart
         </Link>
         <div>

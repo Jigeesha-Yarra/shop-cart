@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import "./Home.css";
 
-const Home = ({searchQuery}) => {
+const Home = ({ searchQuery }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -11,14 +11,15 @@ const Home = ({searchQuery}) => {
       .then((data) => setProducts(data));
   }, []);
 
-  const filterProducts = products.filter((product) => 
-    product.title.toLowerCase().includes(searchQuery.toLowerCase()));
+  const filteredProducts = products.filter((product) =>
+    product.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="home container">
       <h1>Products</h1>
       <div className="product-list">
-        {filterProducts.map((product) => (
+        {filteredProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
