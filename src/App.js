@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Route, Routes } from "react-router-dom"; // Use HashRouter
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Cart from "./components/Cart";
@@ -7,10 +7,10 @@ import "./App.css";
 
 function App() {
   return (
-    <HashRouter basename="/shop-cart"> {/* Add basename */}
+    <HashRouter > {/* Removed basename */}
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} /> {/* Default route */}
+        <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
     </HashRouter>
