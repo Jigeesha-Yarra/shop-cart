@@ -1,21 +1,19 @@
-import React, { useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom"; // Use Routes instead of Switch
+import React from "react";
+import { HashRouter, Route, Routes } from "react-router-dom"; // Use HashRouter
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Cart from "./components/Cart";
 import "./App.css";
 
 function App() {
-  const [searchQuery, setSearchQuery] = useState("");
-
   return (
-    <BrowserRouter>
-      <Header earchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+    <HashRouter>
+      <Header />
       <Routes>
-        <Route path="/" element={<Home searchQuery={searchQuery} />} />
+        <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
